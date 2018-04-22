@@ -37,12 +37,12 @@ def vdpb(f_ub, f_up, d, p, e, t):
     k_b = min(e / (3 * d_0), p / (3 * d_0) - 0.25, f_ub / f_up, 1.0)
     return 2.5 * k_b * t * d * f_up / Y_M
 
-def tdb(f_ub, d):
+def tdb(f_up, d):
     '''
         Design tensile strength of bolt.
     '''
     threaded_area   = 0.78 * math.pi * (d ** 2) / 4
-    return 0.9 * f_ub * threaded_area / Y_M
+    return 0.9 * f_up * threaded_area / Y_M
 
 print("")
 print("Design of Steel Structures")
@@ -64,7 +64,7 @@ f_yb = float(f_ub * float('0.' + bolt_grade.split('.')[1]))
 
 design_shear = vdsb(f_ub, d, N_n, N_s) / 1000
 design_bearing = vdpb(f_ub, f_up, d, p, e, t) / 1000
-design_tension = tdb(f_ub, d) / 1000
+design_tension = tdb(f_up, d) / 1000
 
 bolt_value = min(design_shear, design_bearing, design_tension)
 
@@ -74,7 +74,7 @@ print("fyb = %.3f N/mm2" % f_yb)
 print("----------------------------------------")
 print("Shear strength of bolt  :     %.3f kN" % design_shear)
 print("Bearing strength of bolt:     %.3f kN" % design_bearing)
-print("Tensile strength of bolt:     %.3f kN" % design_tension)
+print("Tensile strength of plate:    %.3f kN" % design_tension)
 print("----------------------------------------")
 print("Bolt value:                   %.3f kN" % bolt_value)
 
