@@ -1,10 +1,7 @@
 Design of Bolted Connections
 ==============
 
-Author: **Afaan Bilal ([@AfaanBilal](https://github.com/AfaanBilal))**   
-Author URL: **[Google+](https://google.com/+AfaanBilal)**
-
-[Afaan Bilal](https://afaanbilal.github.io)
+Author: **[Afaan Bilal](https://afaan.me)**  
 
 ## Introduction
 **Design of Bolted Connections** is a python script that designs bolted connections in steel structures.
